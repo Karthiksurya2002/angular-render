@@ -1,0 +1,162 @@
+<div class="">
+  <div class="appointment">
+    <div class="text-end">
+      <mat-icon
+        *ngIf="editAdmin"
+        class="edit_note"
+        matTooltip="Edit Admin"
+        (click)="editRequestListImage('image')"
+        ><span class="material-symbols-outlined"> edit_note </span></mat-icon
+      >
+    </div>
+    <img [src]="imageUrl" alt="Book Appointment" />
+  </div>
+  <br /><br />
+
+  <div class="container-fluid p-4">
+    <div class="table-wrapper">
+      <!-- Header + Search -->
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3 class="mb-0 fw-semibold">Patient Report List</h3>
+
+        <mat-form-field appearance="outline" class="table-search">
+          <mat-label>Search...</mat-label>
+          <input
+            matInput
+            placeholder="Search patient / doctor / OP No"
+            (keyup)="applyFilter($event)"
+          />
+        </mat-form-field>
+      </div>
+
+      <!-- TABLE -->
+      <div class="table-responsive">
+        <table
+          mat-table
+          [dataSource]="dataSource"
+          matSort
+          class="mat-elevation-z2"
+        >
+          <!-- OP Number -->
+          <ng-container matColumnDef="opNumber">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>OP No</th>
+            <td mat-cell *matCellDef="let row">
+              {{ row.opNumber }}
+            </td>
+          </ng-container>
+
+          <!-- Patient Name -->
+          <ng-container matColumnDef="patientName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Patient Name
+            </th>
+            <td mat-cell *matCellDef="let row">
+              {{ row.patientName }}
+            </td>
+          </ng-container>
+
+          <!-- Doctor -->
+          <ng-container matColumnDef="doctor">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Doctor</th>
+            <td mat-cell *matCellDef="let row">
+              {{ row.doctor }}
+            </td>
+          </ng-container>
+
+          <!-- Date -->
+          <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Preferred Date
+            </th>
+            <td mat-cell *matCellDef="let row">
+              {{ row.date | date: "dd MMM yyyy" }}
+            </td>
+          </ng-container>
+          <!-- Slot -->
+          <ng-container matColumnDef="slot">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Slot</th>
+            <td mat-cell *matCellDef="let row">
+              {{ row.slot }}
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="appointmentCreatedAt">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+              Appointment Created At
+            </th>
+            <td mat-cell *matCellDef="let row">
+              {{ row.appointmentCreatedAt | date: "dd MMM yyyy, HH:mm" }}
+            </td>
+          </ng-container>
+          <!-- Status -->
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef>Status</th>
+            <td mat-cell *matCellDef="let row">
+              <span class="badge-success"> Report Generated </span>
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="download">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Download</th>
+            <td mat-cell *matCellDef="let row">
+              <mat-icon (click)="getIframe(row)">print</mat-icon>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+      </div>
+      <h3 *ngIf="totalRecords == 0" class="text-center py-4 text-muted">
+        No records found
+      </h3>
+      <mat-paginator
+        *ngIf="dataSource.data.length != 0"
+        [length]="totalRecords"
+        [pageSize]="10"
+        [pageSizeOptions]="[5, 10, 20]"
+        showFirstLastButtons
+      >
+      </mat-paginator>
+    </div>
+  </div>
+</div>
+<div [ngStyle]="{ display: 'none' }">
+  <h1 id="printTitle">SHMP Hospital</h1>
+  <br />
+  <div id="print-content" class="container">
+    <h2>Appointment Completed Details</h2>
+    <br />
+    <p><strong>OP Number:</strong> {{ dataa?.opNumber }}</p>
+    <br />
+    <p>
+      <strong>Patient Name:</strong>
+      {{ dataa?.patientName }}
+    </p>
+    <br />
+    <p><strong>Doctor:</strong> {{ dataa?.doctor }}</p>
+    <br />
+    <p>
+      <strong>Prescription:</strong>
+      {{ dataa?.data?.consultationPrescription }}
+    </p>
+    <br />
+
+    <p>
+      <strong>Diagnosis / Clinical Notes:</strong>
+      {{ dataa?.data?.consultationClinicNotes }}
+    </p>
+    <br />
+    <p>
+      <strong>Advice / Recommendations:</strong>
+      {{ dataa?.data?.consultationAdvice }}
+    </p>
+    <br />
+    <div *ngIf="dataa?.data?.consultationFollowUp">
+      <p>
+        <strong>Follow Up Date:</strong>
+        {{ dataa?.data?.appointmentCreatedAt | date: "dd MMM yyyy, h:mm a" }}
+      </p>
+      <br />
+      <p><strong>Follow Up Slot:</strong> {{ dataa?.data?.selectedSlot }}</p>
+    </div>
+  </div>
+</div>

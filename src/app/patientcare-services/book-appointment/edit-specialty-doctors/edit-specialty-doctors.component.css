@@ -1,0 +1,91 @@
+.file-upload {
+  width: 280px;
+}
+.container {
+  padding: 20px;
+  background: url("/backgroundimage.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.upload-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #9c002f; /* hospital theme */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.upload-btn:hover {
+  background-color: #7d0026;
+}
+
+.file-name {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #333;
+  word-break: break-word;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.file-upload-wrapper {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.file-upload {
+  text-align: center;
+}
+.file-name .icon {
+  margin-top: 8px;
+  font-size: 15px;
+}
+.hover:hover {
+  color: red;
+  font-size: 15px;
+  /* background-color:  */
+}
+
+.custom-select,
+.custom-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+  height: 55px; /* Match heights */
+  background-color: #f5f5f5; /* Light grey background */
+}
+.custom-select {
+  width: 100%;
+  /* Remove default arrow and add custom one */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url("/dropdownarrow.svg");
+  /* background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%205%22%3E%3Cpath%20fill%3D%22%2398002e%22%20d%3D%22M2%200L0%202h4zm0%205L0%203h4z%22%2F%3E%3C%2Fsvg%3E"); */
+  background-repeat: no-repeat;
+  background-position:
+    right 0.7em top 50%,
+    0 0;
+  background-size:
+    0.6em auto,
+    100% 100%;
+}
+.custom-input.w-100 {
+  width: 100%;
+}
+.uploadedImage img {
+  width: 16vw;
+  height: 16vh;
+}
+/* .uploadedImage {
+  width: 150px;
+  height: 150px;
+} */

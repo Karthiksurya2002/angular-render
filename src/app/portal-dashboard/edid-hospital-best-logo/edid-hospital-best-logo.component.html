@@ -1,0 +1,17 @@
+<div class="p-5">
+  <h2 class="container d-flex justify-content-center background-container">
+    Update Certification Logo
+  </h2>
+  <app-file-upload (messageEvent)="filePath($event)"></app-file-upload>
+  <div class="d-flex justify-content-center">
+    <button
+      mat-flat-button
+      color="primary"
+      (click)="save()"
+      [disabled]="!selectedFile"
+    >
+      Save
+    </button>
+    <button mat-stroked-button (click)="closeDialog()">Cancel</button>
+  </div>
+</div>

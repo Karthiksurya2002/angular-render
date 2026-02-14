@@ -1,0 +1,135 @@
+/* Background section */
+.profile-sec.pro-bg {
+  padding: 20px;
+  background: url("/backgroundimage.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+/* Profile wrapper */
+.dr-profile {
+  display: flex;
+  gap: 25px;
+  padding: 25px;
+  border-radius: 6px;
+}
+
+/* Left image */
+.dr-profile-lft {
+  width: 220px;
+  flex-shrink: 0;
+}
+
+.dr-profile-lft img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+/* Right content */
+.dr-profile-rgt {
+  flex: 1;
+}
+
+/* Doctor name */
+.dr-profile h3 {
+  color: #98002e;
+  font-size: 30px;
+  line-height: 40px;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+/* Department */
+.dr-profile h3 span {
+  display: block;
+  font-size: 16px;
+  color: #444;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+/* Details wrapper */
+.dr-details {
+  width: 100%;
+}
+
+/* Scroll area */
+.nice-scroll {
+  max-height: 230px;
+  overflow-y: auto;
+}
+
+/* Table styles */
+.dr-details table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dr-details td {
+  padding: 8px 0;
+  font-size: 15px;
+  color: #333;
+  vertical-align: top;
+}
+
+/* Label column */
+.dr-details td:first-child {
+  width: 160px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* Request button */
+.req-button {
+  margin-top: 20px;
+}
+
+.req-button ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.req-button li {
+  display: inline-block;
+}
+
+.req-button a {
+  background: #98002e;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 15px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.req-button a:hover {
+  background: #760023;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .dr-profile {
+    flex-direction: column;
+  }
+
+  .dr-profile-lft {
+    width: 100%;
+    text-align: center;
+  }
+
+  .dr-profile-lft img {
+    max-width: 220px;
+  }
+
+  .dr-profile h3 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 480px) {
+  .dr-details td:first-child {
+    width: 120px;
+  }
+}

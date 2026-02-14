@@ -1,0 +1,37 @@
+<div class="container">
+  <h2>Appointment Completed Details</h2>
+  <div class="row">
+    <div class="col-md-12">
+      <p><strong>OP Number: </strong> {{ data.opNumber }}</p>
+      <p>
+        <strong>Patient Name:</strong> {{ data?.patientFirstName }}
+        {{ data?.patientLastName }}
+      </p>
+      <p><strong>Doctor:</strong> {{ data?.patientDoctorName }}</p>
+      <p>
+        <strong>Prescription:</strong>
+        {{ data?.consultationPrescription }}
+      </p>
+    </div>
+    <div class="col-md-12">
+      <p>
+        <strong>Diagnosis / Clinical Notes :</strong>
+        {{ data?.consultationClinicNotes }}
+      </p>
+      <p>
+        <strong>Advice / Recommendations:</strong>
+        {{ data?.consultationAdvice }}
+      </p>
+      <div *ngIf="data?.consultationFollowUp">
+        <p>
+          <strong>Follow UpDate:</strong>
+          {{ data?.appointmentCreatedAt | date: "dd MMM yyyy, h:mm a" }}
+        </p>
+        <p><strong>Follow UpSlot:</strong> {{ data?.selectedSlot }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="text-end">
+    <button mat-stroked-button mat-dialog-close>Cancel</button>
+  </div>
+</div>

@@ -1,0 +1,120 @@
+<div [formGroup]="signUpFormGroup" class="p-3 background-container">
+  <h2 class="text-center pb-2">Registaration</h2>
+  <div class="row">
+    <div class="col-md-6 d-flex justify-content-center align-items-center">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label class="form-label required" appearance="outline"
+          >First Name</mat-label
+        >
+        <input
+          matInput
+          placeholder="Enter UserName"
+          formControlName="fistName"
+        />
+        <mat-error *ngIf="checkError?.fistName?.touched">
+          First Name is required.</mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div class="col-md-6 d-flex justify-content-center align-items-center">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label class="form-label required" appearance="outline"
+          >Last Name</mat-label
+        >
+        <input
+          matInput
+          placeholder="Enter UserName"
+          formControlName="lastName"
+        />
+        <mat-error *ngIf="checkError?.lastName?.touched">
+          Last Name is required.</mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div class="col-md-6 d-flex justify-content-center align-items-center">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label class="form-label required" appearance="outline"
+          >Phone No.</mat-label
+        >
+        <input
+          matInput
+          placeholder="Enter UserName"
+          formControlName="phoneNo"
+        />
+        <mat-error *ngIf="checkError?.phoneNo?.touched">
+          PhoneNo is required.</mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div class="col-md-6 d-flex justify-content-center align-items-center">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label class="form-label required" appearance="outline"
+          >Email Id</mat-label
+        >
+        <input
+          matInput
+          placeholder="Enter UserName"
+          formControlName="emailId"
+        />
+      </mat-form-field>
+    </div>
+    <div class="col-md-6 d-flex justify-content-center align-items-center">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label appearance="outline">Address</mat-label>
+        <input
+          matInput
+          placeholder="Enter UserName"
+          formControlName="address"
+        />
+      </mat-form-field>
+    </div>
+    <div class="col-md-6">
+      <mat-label appearance="outline"> Gender</mat-label><br />
+      <mat-radio-group aria-label="Select an option" formControlName="gender">
+        <mat-radio-button [value]="1">Male</mat-radio-button>
+        <mat-radio-button [value]="2">Female</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="col-md-6 d-flex justify-content-center align-items-center">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label class="form-label required" appearance="outline"
+          >UserName</mat-label
+        >
+        <input
+          matInput
+          placeholder="Enter UserName"
+          formControlName="userName"
+        />
+        <mat-error *ngIf="checkError?.userName?.touched">
+          UserName is required.</mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div class="col-md-6 d-flex justify-content-center align-items-center">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label class="form-label required" appearance="outline"
+          >Password</mat-label
+        >
+        <input
+          matInput
+          placeholder="Enter Password"
+          formControlName="password"
+        />
+        <mat-error *ngIf="checkError?.password?.touched">
+          Password is required.</mat-error
+        >
+      </mat-form-field>
+    </div>
+    <div class="text-center example-button-row">
+      <button
+        mat-flat-button
+        [disabled]="signUpFormGroup.invalid"
+        (click)="getRegister()"
+      >
+        Save
+      </button>
+      <button mat-stroked-button (click)="formReset()">Reset</button>
+      <button mat-raised-button (click)="close()">Cancel</button>
+    </div>
+  </div>
+</div>

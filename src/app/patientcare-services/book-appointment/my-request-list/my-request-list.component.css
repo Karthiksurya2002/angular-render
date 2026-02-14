@@ -1,0 +1,221 @@
+/* ===== Page background ===== */
+.table-wrapper {
+  background: #f9fafb;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* ===== Search box ===== */
+.table-search {
+  max-width: 300px;
+  margin-bottom: 16px;
+}
+
+.table-search input {
+  border-radius: 8px;
+}
+
+/* ===== Material table ===== */
+table {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* Header */
+.mat-mdc-header-row {
+  background: #f1f5f9;
+}
+
+.mat-mdc-header-cell {
+  font-weight: 600;
+  font-size: 14px;
+  color: #334155;
+}
+
+/* Rows */
+.mat-mdc-row {
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.mat-mdc-row:hover {
+  background-color: #f8fafc;
+  transform: scale(1.002);
+}
+
+/* Cells */
+.mat-mdc-cell {
+  font-size: 14px;
+  color: #1f2937;
+}
+
+/* ===== Sort arrow color ===== */
+.mat-sort-header-arrow {
+  color: #2563eb;
+}
+
+/* ===== Pagination ===== */
+.mat-mdc-paginator {
+  background: transparent;
+  margin-top: 12px;
+}
+
+.mat-mdc-paginator .mat-mdc-icon-button {
+  border-radius: 6px;
+}
+
+.mat-mdc-paginator-range-label {
+  font-size: 13px;
+  color: #475569;
+}
+
+/* ===== Status badges (optional) ===== */
+.badge-success {
+  background: #dcfce7;
+  color: #166534;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.badge-warning {
+  background: #fef3c7;
+  color: #92400e;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* ===== Action buttons ===== */
+.table-action-btn {
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 13px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .table-search {
+    max-width: 100%;
+  }
+
+  .mat-mdc-header-cell,
+  .mat-mdc-cell {
+    font-size: 13px;
+  }
+}
+.background-container {
+  padding: 20px;
+  background: url("/backgroundimage.jpg") no-repeat center center;
+  background-size: cover;
+}
+.badge-cancelled {
+  background-color: #fdecea; /* soft red */
+  color: #c62828; /* dark red text */
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.badge-cancelled-after-approval {
+  background-color: #f3e5f5; /* soft lavender */
+  color: #6a1b9a; /* deep purple */
+  padding: 4px 12px;
+  border-radius: 14px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.badge-rescheduled {
+  background-color: #e0f7fa; /* soft cyan */
+  color: #006064; /* deep teal */
+  padding: 4px 12px;
+  border-radius: 14px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.action-menu .mat-menu-item {
+  font-size: 14px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.action-menu .mat-menu-item:hover {
+  background-color: #f5f5f5;
+}
+
+.action-menu {
+  min-width: 140px;
+}
+.quickFast {
+  margin-top: -10vh !important;
+  padding: 30px 0;
+  margin: 10vh 24vh 10vh 14vh;
+}
+.quickFast h2 {
+  font-family: "Constantia";
+  font-size: 52px;
+  margin-bottom: 55px;
+  text-align: center;
+}
+.quickFast h3 {
+  font-family: proxima_nova_rgbold;
+  font-size: 58px;
+  line-height: 65px;
+  padding-bottom: 12px;
+  color: #98002e;
+  font-weight: 1000;
+}
+.quickFast p {
+  font-family: "proxima_nova_rgregular";
+  font-size: 18px;
+  line-height: 22px;
+  color: #000;
+  text-align: center;
+}
+.hospitalFacilities {
+  margin-top: -18vh !important;
+}
+.appointment img {
+  width: 100vw;
+  height: 60vh;
+}
+.background-container .quickFast h3:hover {
+  font-size: 70px;
+  cursor: pointer;
+  color: #97012e;
+  font-weight: 600;
+}
+.background-container .quickFast p:hover {
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #97012e;
+}
+.background-container .quickFast h2:hover {
+  font-size: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #97012e;
+}
+
+.badge-noShow {
+  background-color: #dee2e6;
+  color: red;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.badge-Completed {
+  background-color: #089108;
+  color: gainsboro;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}

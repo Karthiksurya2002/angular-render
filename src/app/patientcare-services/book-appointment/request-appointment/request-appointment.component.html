@@ -1,0 +1,66 @@
+<div class="profile-sec pro-bg">
+  <div class="dr-profile">
+    <!-- LEFT IMAGE -->
+    <div class="dr-profile-lft">
+      <img [src]="getDoctorImages()" alt="Doctor Image" />
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="dr-profile-rgt">
+      <h3>
+        {{ data?.adDoctorName }}
+        <span>Department of {{ data?.adSpecialties }}, SHMP Hospitals</span>
+      </h3>
+
+      <div class="dr-details">
+        <div class="nice-scroll">
+          <table width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tbody>
+              <tr>
+                <td>Specialty</td>
+                <td>{{ data?.adSpecialties }}</td>
+              </tr>
+              <tr>
+                <td>Experience</td>
+                <td>{{ data?.adExperience }}</td>
+              </tr>
+              <!-- <tr>
+                <td>Qualification</td>
+                <td>MS (Obst &amp; Gyn), MCH (Gyn-Oncology), FMAS, IAPC</td>
+              </tr> -->
+              <tr>
+                <td>Designation</td>
+                <td>{{ data?.adDesignation }}</td>
+              </tr>
+              <tr>
+                <td>Shift</td>
+
+                <td *ngIf="data?.adShift == 'Evening'">
+                  🕒 Evening Shift (2 AM – 6 PM)
+                </td>
+                <td *ngIf="data?.adShift == 'Morning'">
+                  🕒 Morning Shift (9 AM – 1 PM)
+                </td>
+                <td *ngIf="data?.adShift == 'Night'">
+                  🕒 Night Shift (7 AM – 12 PM)
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- OPTIONAL BUTTON SECTION -->
+        <div class="req-button">
+          <ul>
+            <li (click)="openAppointmentForm()">
+              <a> Request an Appointment </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="text-end">
+        <button mat-stroked-button (click)="closeDialog()">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

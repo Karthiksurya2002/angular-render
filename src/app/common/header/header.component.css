@@ -1,0 +1,77 @@
+.header {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  z-index: 1000;
+}
+.top-bar {
+  background-color: #9c002f;
+  color: white;
+  font-size: 13px;
+  padding: 6px 0;
+}
+
+.top-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 6px;
+  font-size: 16px !important;
+}
+
+.help-line {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* ===== MAIN NAV ===== */
+.nav-bar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #eee;
+  padding: 12px 0;
+}
+
+.logo img {
+  height: 80px;
+}
+
+/* MENU */
+.menu a {
+  margin: 0 16px;
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.menu a:hover {
+  color: #9c002f;
+  cursor: pointer;
+}
+
+/* ICONS */
+.nav-icons {
+  display: flex;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.material-icons {
+  font-size: 26px;
+}
+
+.time-display {
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 4px;
+  font-size: 13px;
+  color: #495057;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+.underline {
+  display: inline-block;
+  width: 100px;
+  height: 1px;
+  background: #fff;
+}

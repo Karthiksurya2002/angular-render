@@ -1,0 +1,20 @@
+<div class="file-upload-wrapper">
+  <div class="file-upload">
+    <input type="file" #fileInput hidden (change)="onFileSelect($event)" />
+
+    <button class="upload-btn" (click)="fileInput.click()">Select File</button>
+    <div class="d-flex justify-content-center">
+      <p class="file-name" *ngIf="fileName">
+        {{ fileName }}
+        <mat-icon
+          class="icon ml-2"
+          (click)="clearAttachement()"
+          [hidden]="fileName == ''"
+          matTooltip="clear"
+        >
+          <span class="material-symbols-outlined hover"> close_small </span>
+        </mat-icon>
+      </p>
+    </div>
+  </div>
+</div>

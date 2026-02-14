@@ -1,0 +1,103 @@
+<header class="login-header p-2">
+  <h3>{{ info?.title }}</h3>
+</header>
+
+<section class="login-wrapper p-7" [formGroup]="loginFormGroup">
+  <div class="container">
+    <div class="row login-card shadow-lg">
+      <div class="col-md-6 login-image d-none d-md-flex">
+        <img src="/login.png" alt="Hospital Login" />
+      </div>
+
+      <div class="col-md-6">
+        <mat-card class="login-form">
+          <h2 class="text-center mb-4 fw-bold">Login</h2>
+
+          <mat-form-field appearance="outline" class="w-100 mb-3">
+            <mat-label>User Name</mat-label>
+            <input
+              matInput
+              placeholder="Enter username "
+              formControlName="userName"
+            />
+            <mat-error *ngIf="hasError?.userName?.touched">
+              Username is required
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="w-100 mb-3">
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              [type]="showPassword ? 'text' : 'password'"
+              placeholder="Enter password"
+              formControlName="password"
+            />
+            <button
+              mat-icon-button
+              matSuffix
+              type="button"
+              (click)="togglePassword()"
+            >
+              <mat-icon>
+                {{ showPassword ? "visibility_off" : "visibility" }}
+              </mat-icon>
+            </button>
+            <mat-error *ngIf="hasError?.password?.touched">
+              Password is required
+            </mat-error>
+            <mat-error *ngIf="hasError?.errors?.['minlength']">
+              Username must be at least 8 characters long.
+            </mat-error>
+          </mat-form-field>
+
+          <div class="d-flex justify-content-between align-items-center mt-4">
+            <button
+              mat-flat-button
+              color="primary"
+              class="w-50 me-2"
+              (click)="getLogin()"
+              [disabled]="loginFormGroup.invalid"
+            >
+              Login
+            </button>
+
+            <button
+              mat-stroked-button
+              color="primary"
+              class="w-50"
+              (click)="getSignUp()"
+            >
+              Sign Up
+            </button>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="footer text-light mt-auto">
+  <div class="container py-3">
+    <div class="row align-items-center">
+      <div class="col-md-6 text-center text-md-start">
+        <span>
+          © {{ info?.year }} <strong>{{ info?.title }}</strong>
+        </span>
+      </div>
+
+      <div class="col-md-6 text-center text-md-end">
+        <a href="#" class="footer-link"
+          >{{ info?.footerInfo?.contact }} : 📞{{ info?.phoneNo }}</a
+        >
+        <span class="mx-2">|</span>
+        <a href="#" class="footer-link">{{
+          info?.footerInfo?.privacypolicy
+        }}</a>
+        <span class="mx-2">|</span>
+        <a href="#" class="footer-link">{{ info?.footerInfo?.terms }}</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- <app-footer></app-footer> -->

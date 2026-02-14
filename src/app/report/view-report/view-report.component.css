@@ -1,0 +1,110 @@
+.table-wrapper {
+  background: #f9fafb;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* ===== Search box ===== */
+.table-search {
+  max-width: 300px;
+  margin-bottom: 16px;
+}
+
+.table-search input {
+  border-radius: 8px;
+}
+
+/* ===== Material table ===== */
+table {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* Header */
+.mat-mdc-header-row {
+  background: #f1f5f9;
+}
+
+.mat-mdc-header-cell {
+  font-weight: 600;
+  font-size: 14px;
+  color: #334155;
+}
+
+/* Rows */
+.mat-mdc-row {
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.mat-mdc-row:hover {
+  background-color: #f8fafc;
+  transform: scale(1.002);
+}
+
+/* Cells */
+.mat-mdc-cell {
+  font-size: 14px;
+  color: #1f2937;
+}
+
+/* ===== Sort arrow color ===== */
+.mat-sort-header-arrow {
+  color: #2563eb;
+}
+
+/* ===== Pagination ===== */
+.mat-mdc-paginator {
+  background: transparent;
+  margin-top: 12px;
+}
+
+.mat-mdc-paginator .mat-mdc-icon-button {
+  border-radius: 6px;
+}
+
+.mat-mdc-paginator-range-label {
+  font-size: 13px;
+  color: #475569;
+}
+
+/* ===== Status badges (optional) ===== */
+.badge-success {
+  background: #dcfce7;
+  color: #166534;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.badge-warning {
+  background: #fef3c7;
+  color: #92400e;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* ===== Action buttons ===== */
+.table-action-btn {
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 13px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .table-search {
+    max-width: 100%;
+  }
+
+  .mat-mdc-header-cell,
+  .mat-mdc-cell {
+    font-size: 13px;
+  }
+}

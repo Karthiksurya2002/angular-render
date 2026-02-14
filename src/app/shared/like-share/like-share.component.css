@@ -1,0 +1,22 @@
+h2 {
+  width: 100%;
+  float: left;
+  color: #96012c;
+  font-family: "Constantia";
+  font-size: 30px;
+  line-height: 38px;
+  margin-bottom: 15px;
+}
+.customfooter {
+  margin-left: 40vh;
+  margin-right: 40vh;
+  margin-top: 0vh;
+  margin-bottom: 5vh;
+}
+.rotate-img {
+  transition: transform 300ms ease;
+}
+
+.rotate-img:hover {
+  transform: scaleX(-1);
+}

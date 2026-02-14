@@ -1,0 +1,65 @@
+<div class="header">
+  <header class="main-header">
+    <!-- 🔴 TOP BAR -->
+    <div class="top-bar">
+      <div class="container d-flex justify-content-between align-items-center">
+        <div class="top-links">
+          <h2 class="mb-0">Smart Hospital Management Portal</h2>
+          <span class="underline"></span>
+        </div>
+
+        <div class="help-line d-flex">
+          <p class="time-display">🕒 {{ time$ | async }}</p>
+          📞 <span class="text-warning">Help Line</span> +91 9952149911
+        </div>
+      </div>
+    </div>
+
+    <!-- ⚪ MAIN NAV -->
+    <div class="nav-bar">
+      <div class="container d-flex align-items-center justify-content-between">
+        <!-- LOGO -->
+        <div class="logo">
+          <img src="/logo.png" alt="Hospital Logo" />
+        </div>
+
+        <!-- MENU -->
+        <nav class="menu">
+          <a href="/dashboard">Home</a>
+          <!-- <a [matMenuTriggerFor]="menu">Specialities</a>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>Super Specialities</button>
+            <button mat-menu-item>Board Specialities</button>
+          </mat-menu> -->
+          <!-- <a
+            [routerLink]="['/patientcare/book-appointment']"
+            [state]="{ type: doctors }"
+            >Doctors</a
+          > -->
+          <!-- <a [matMenuTriggerFor]="Doctor" >Doctors</a>
+          <mat-menu #Doctor="matMenu">
+            <button
+              mat-menu-item
+              [routerLink]="['/patientcare/book-appointment']"
+            >
+              Requst an Appointment
+            </button>
+            <button mat-menu-item>Find an Doctor!</button>
+          </mat-menu> -->
+          <a (click)="bookAppointment()">Book Appointment</a>
+          <a [routerLink]="['/patientcare/my-request-list']">My Request</a>
+          <a [routerLink]="['/report/patient-report']">My Reports List</a>
+
+          <a (click)="openAbout()">About Us</a>
+        </nav>
+
+        <!-- ICONS -->
+        <div class="nav-icons">
+          <span class="material-icons" matTooltip="logout" (click)="logout()"
+            >logout</span
+          >
+        </div>
+      </div>
+    </div>
+  </header>
+</div>

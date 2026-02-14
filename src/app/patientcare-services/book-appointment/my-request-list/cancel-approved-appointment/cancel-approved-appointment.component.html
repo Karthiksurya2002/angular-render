@@ -1,0 +1,110 @@
+<div>
+  <div
+    class="container d-flex align-items-center p-4 flex-column text-center"
+    *ngIf="!rescheduleOption"
+  >
+    <h2 class="mb-2">Manage Appointment</h2>
+
+    <p class="mb-3" *ngIf="status !== 'Rescheduled'">
+      Your appointment <strong>{{ data?.opNumber }}</strong> is already
+      approved. What would you like to do?
+    </p>
+    <p class="mb-3" *ngIf="status === 'Rescheduled'">
+      Your appointment <strong>{{ data?.opNumber }}</strong> is already approved
+      and Rescheduled. What would you like to do?
+    </p>
+
+    <button
+      mat-raised-button
+      color="primary"
+      class="w-100 mb-2"
+      (click)="changeAppointmentDate()"
+    >
+      Change Appointment Date
+    </button>
+
+    <button
+      mat-stroked-button
+      color="warn"
+      class="w-100 mb-2"
+      (click)="onCancel()"
+    >
+      Cancel Appointment
+    </button>
+
+    <button mat-button class="w-100" (click)="onClose()">
+      Keep Appointment
+    </button>
+  </div>
+
+  <div
+    class="container d-flex align-items-center p-4 flex-column text-center"
+    *ngIf="rescheduleOption"
+    [formGroup]="form"
+  >
+    <h2>Reschedule Appointment</h2>
+
+    <p>
+      Appointment ID:
+      <strong>{{ data?.opNumber }}</strong>
+    </p>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>New Preferred Date</mat-label>
+      <input
+        matInput
+        [matDatepicker]="picker"
+        formControlName="patientPreferredDate"
+        [min]="minDate"
+        required
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <div class="">
+      <select
+        class="newfont custom-select w-70"
+        id="specialty-select"
+        (change)="onSelectShiftDetails($event)"
+        formControlName="slot"
+      >
+        <option *ngFor="let data of timeSlots" [value]="data">
+          {{ data }}
+        </option>
+      </select>
+    </div>
+    <!-- <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Reason (optional)</mat-label>
+    <mat-select [(ngModel)]="reason">
+      <mat-option value="Personal reason">Personal reason</mat-option>
+      <mat-option value="Not feeling well">Not feeling well</mat-option>
+      <mat-option value="Doctor unavailable">Doctor unavailable</mat-option>
+      <mat-option value="Other">Other</mat-option>
+    </mat-select>
+    <textarea
+      [(ngModel)]="reason"
+      placeholder="Enter reason here..."
+      rows="3"
+    ></textarea>
+  </mat-form-field> -->
+
+    <mat-label class="m-2">Reason (optional)</mat-label>
+    <textarea
+      [(ngModel)]="reason"
+      placeholder="Enter reason here..."
+      rows="3"
+    ></textarea>
+    <div class="action-buttons">
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="onReschedule()"
+        [disabled]="form.invalid || !slotValidation"
+      >
+        Confirm Reschedule
+      </button>
+
+      <button mat-button (click)="onClose()">Keep Appointment</button>
+    </div>
+  </div>
+</div>

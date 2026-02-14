@@ -1,0 +1,213 @@
+/* .appointment img {
+  width: 100vw;
+}
+.mix-pad span {
+  content: "";
+  margin-top: 20px;
+  margin-left: 10px;
+  position: absolute;
+  background: #98002e;
+  width: 15px;
+  height: 15px;
+}
+h2 {
+  font-family: "Constantia";
+}
+.newfont {
+  font-family: "proxima_nova_rgregular";
+}
+.customContainer {
+  margin-left: 25vh;
+  margin-right: 25vh;
+}
+.doctorsName {
+  width: 18vw;
+  height: 27vh;
+  border: 2px solid #9c002f;
+  display: flex;
+  justify-content: center;
+}
+.doctorsName img {
+  width: 10vw;
+  height: 19vh;
+}
+.doctorsProfile {
+  width: 20vw;
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+}
+.customfooter {
+  margin-left: 40vh;
+  margin-right: 40vh;
+  margin-top: 15vh;
+  margin-bottom: 15vh;
+} */
+
+.appointment img {
+  width: 100vw;
+  height: 60vh;
+}
+/* --- General Layout and Typography (from your snippets) --- */
+.mix-pad span {
+  content: "";
+  margin-top: 20px;
+  margin-left: 10px;
+  position: absolute;
+  background: #98002e;
+  width: 15px;
+  height: 15px;
+}
+h2 {
+  font-family: "Constantia";
+}
+.newfont {
+  font-family: "proxima_nova_rgregular";
+}
+.customContainer {
+  margin-left: 25vh;
+  margin-right: 25vh;
+}
+.d-flex {
+  display: flex;
+}
+.align-items-middle {
+  align-items: center;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+/* Basic grid column approximations */
+.col-md-3,
+.col-md-1,
+.col-md-2 {
+  padding-right: 15px;
+  padding-left: 15px;
+  box-sizing: border-box;
+}
+/* .col-md-3 {
+  width: 25%;
+}
+.col-md-1 {
+  width: 8.33%;
+}
+.col-md-2 {
+  width: 16.66%;
+} */
+
+/* --- Custom Form Field Styling to match the image look --- */
+.custom-select,
+.custom-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+  height: 45px; /* Match heights */
+  background-color: #f5f5f5; /* Light grey background */
+}
+.custom-select {
+  width: 100%;
+  /* Remove default arrow and add custom one */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url("/dropdownarrow.svg");
+  /* background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%204%205%22%3E%3Cpath%20fill%3D%22%2398002e%22%20d%3D%22M2%200L0%202h4zm0%205L0%203h4z%22%2F%3E%3C%2Fsvg%3E"); */
+  background-repeat: no-repeat;
+  background-position:
+    right 0.7em top 50%,
+    0 0;
+  background-size:
+    0.6em auto,
+    100% 100%;
+}
+
+.custom-input.w-100 {
+  width: 100%;
+}
+.mb-3 {
+  margin-bottom: 1rem;
+}
+.or {
+  color: #98002e;
+}
+/* --- Doctor Profile Styling (from your snippets) --- */
+.doctor-card {
+  width: 18vw;
+  /* FULL border */
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+.doctorsProfile {
+  width: 100%;
+  height: 27vh;
+  overflow: hidden;
+}
+
+.doctorsProfile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.doctorsName {
+  padding: 20px 10px;
+  text-align: center;
+  height: 24vh;
+  border: 1px solid #98002e;
+  background: #fff;
+  transition: all 0.5s ease;
+}
+
+.doctorsName h3 {
+  color: #9c002f;
+  font-size: 14px;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.doctorsName p,
+.doctorsName span {
+  color: #000;
+  font-size: 16px;
+  font-family: "proxima_novasemibold";
+  line-height: 30px;
+  font-weight: 70;
+}
+/* .doctor-card:hover {
+  background-color: #9c002f;
+} */
+
+.doctor-card:hover .doctorsName {
+  background-color: #9c002f;
+}
+
+.doctor-card:hover .doctorsName h3,
+.doctor-card:hover .doctorsName p,
+.doctor-card:hover .doctorsName span {
+  color: #fff;
+  font-size: 16px;
+  transition: all 0.5s ease;
+  position: relative;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  /* text-transform: uppercase; */
+  letter-spacing: 0.5px;
+  font-weight: 100px;
+}
+
+.doctor-card:hover .doctorsProfile img {
+  transform: scale(1.08);
+}
+::ng-deep.imageSpacing {
+  padding: 0 15px 30px 15px !important;
+}
+.underline {
+  display: inline-block;
+  width: 30px;
+  height: 2px;
+  background: #fff;
+  margin-bottom: 15px;
+}

@@ -1,0 +1,55 @@
+<div
+  class="container w-100 p-4 background-container"
+  [formGroup]="hospitalInfo"
+>
+  <div>
+    <h5><span class="text-primary fs-6">* </span>Edit Heading/Title</h5>
+    <mat-form-field appearance="outline" class="w-100 mb-3">
+      <mat-label>Enter Heading/Title</mat-label>
+      <input
+        matInput
+        placeholder="Enter Heading/Title"
+        formControlName="title"
+      />
+    </mat-form-field>
+  </div>
+
+  <h5>
+    <span class="text-primary fs-6">* </span>Edit Description / About text
+  </h5>
+  <textarea
+    rows="6"
+    cols="80"
+    formControlName="description"
+    placeholder="Enter Description / About text..."
+  ></textarea>
+  <h5><span class="text-primary fs-6">* </span>Edit Button Name</h5>
+  <mat-form-field appearance="outline" class="w-100 mb-3">
+    <mat-label>Enter Button Name</mat-label>
+    <input
+      matInput
+      placeholder="Enter Button Name"
+      formControlName="buttonName"
+    />
+  </mat-form-field>
+  <div class="d-flex">
+    <div class="col-md-8">
+      <p class="text-danger">
+        <span class="text-primary">*</span> No fields are mantatory here.
+      </p>
+    </div>
+    <div>
+      <button mat-flat-button color="primary" class="w-10" (click)="saveInfo()">
+        Save
+      </button>
+      <button
+        mat-stroked-button
+        color="primary"
+        class="w-10"
+        (click)="closeDialog()"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</div>

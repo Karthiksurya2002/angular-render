@@ -1,0 +1,49 @@
+.file-upload {
+  width: 280px;
+}
+
+.upload-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #9c002f; /* hospital theme */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.upload-btn:hover {
+  background-color: #7d0026;
+}
+
+.file-name {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #333;
+  word-break: break-word;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.file-upload-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.file-upload {
+  text-align: center;
+}
+.file-name .icon {
+  margin-top: 8px;
+  font-size: 16px;
+}
+.hover:hover {
+  color: #7d0026;
+  font-size: 18px;
+  /* background-color:  */
+}

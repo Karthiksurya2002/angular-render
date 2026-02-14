@@ -1,0 +1,94 @@
+/* Title */
+.dialog-title {
+  margin: 0;
+  padding-bottom: 10px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #2b2b2b;
+  border-bottom: 1px solid #eee;
+}
+
+/* Content */
+.dialog-content {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* Section titles */
+.section-title {
+  margin-top: 18px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #e63946;
+}
+
+/* Highlight box */
+.highlight {
+  background: #fafafa;
+  padding: 10px;
+  border-left: 4px solid #e63946;
+  font-size: 13px;
+  border-radius: 4px;
+}
+
+/* Owner section */
+.owner {
+  margin-top: 20px;
+  padding-top: 12px;
+  border-top: 1px dashed #ddd;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.owner span {
+  color: #e63946;
+}
+
+/* Dialog actions */
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+}
+/* Profile Section */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+/* Photo */
+.photo img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e63946;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Name & Role */
+.profile-info h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #2b2b2b;
+}
+
+.role {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: #777;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .profile {
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -1,0 +1,102 @@
+<div class="heart-lungs">
+  <div class="text-end">
+    <mat-icon
+      *ngIf="editAccess"
+      class="edit_note"
+      matTooltip="Edit Admin"
+      (click)="editAdmin('image')"
+      ><span class="material-symbols-outlined"> edit_note </span></mat-icon
+    >
+  </div>
+  <section class="baseImage">
+    <img *ngIf="imageUrl" [src]="imageUrl" alt="" />
+  </section>
+</div>
+<section class="contant">
+  <div class="innerText">
+    <div class="text-end">
+      <mat-icon
+        *ngIf="editAccess"
+        class="edit_note"
+        matTooltip="Edit Admin"
+        (click)="editAdmin('title')"
+        ><span class="material-symbols-outlined"> edit_note </span></mat-icon
+      >
+    </div>
+
+    <div class="pb-3">
+      <strong>{{ title }}</strong>
+    </div>
+
+    <p *ngFor="let data of contentData">{{ data }}</p>
+  </div>
+</section>
+
+<section class="contant">
+  <div class="innerText">
+    <div class="text-end">
+      <mat-icon
+        *ngIf="editAccess"
+        class="edit_note"
+        matTooltip="Edit Admin"
+        (click)="editAdmin('program')"
+        ><span class="material-symbols-outlined"> edit_note </span></mat-icon
+      >
+    </div>
+    <h2>{{ programTitle }}</h2>
+    <strong>{{ subProgramTitle }} </strong>
+    <p class="mt-3">{{ programExplanation }}</p>
+    <strong>{{ updateWhatWeDo }}</strong>
+    <div class="mt-3" *ngFor="let data of updateWhatWeDoExplanation">
+      <ul>
+        <p><img src="/circle.png" alt="" /> {{ data }}</p>
+      </ul>
+    </div>
+    <strong>{{ howWeDo }}</strong>
+    <p class="mt-3" *ngFor="let data of howWeDoExplanation">
+      {{ data }}
+    </p>
+  </div>
+</section>
+
+<section class="contant">
+  <div class="innerText">
+    <div class="text-end">
+      <mat-icon
+        *ngIf="editAccess"
+        class="edit_note"
+        matTooltip="Edit Admin"
+        (click)="editAdmin('heart')"
+        ><span class="material-symbols-outlined"> edit_note </span></mat-icon
+      >
+    </div>
+    <h2>{{ heartTitle }}</h2>
+    <p class="mt-3">{{ heartContent }}</p>
+    <div class="mt-3" *ngFor="let data of heartContentExpln">
+      <ul>
+        <p><img src="/circle.png" alt="" /> {{ data }}</p>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="contant">
+  <div class="innerText">
+    <div class="text-end">
+      <mat-icon
+        *ngIf="editAccess"
+        class="edit_note"
+        matTooltip="Edit Admin"
+        (click)="editAdmin('lungs')"
+        ><span class="material-symbols-outlined"> edit_note </span></mat-icon
+      >
+    </div>
+    <h2>{{ lungsTitle }}</h2>
+    <p class="mt-3">{{ lungsContent }}</p>
+    <div class="mt-3" *ngFor="let data of lungsContentExpln">
+      <ul>
+        <p><img src="/circle.png" alt="" /> {{ data }}</p>
+      </ul>
+    </div>
+  </div>
+</section>
+<app-like-share></app-like-share>

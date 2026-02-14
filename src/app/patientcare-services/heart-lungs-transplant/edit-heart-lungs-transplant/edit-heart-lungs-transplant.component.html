@@ -1,0 +1,144 @@
+<div class="container p-4">
+  <div *ngIf="visibleTitle" [formGroup]="formEdit">
+    <div>
+      <h3>Update Content Title</h3>
+      <textarea
+        rows="2"
+        cols="140"
+        placeholder="Update Content Title..."
+        formControlName="title"
+      ></textarea>
+    </div>
+    <div>
+      <h3>Update Explanation</h3>
+      <textarea
+        rows="20"
+        cols="140"
+        placeholder="Update Explanation Title..."
+        formControlName="content"
+      ></textarea>
+    </div>
+  </div>
+
+  <div *ngIf="program" [formGroup]="formProgram">
+    <div>
+      <h3>Update About Program Title</h3>
+      <textarea
+        rows="2"
+        cols="155"
+        placeholder="Update About Program Title..."
+        formControlName="programTitle"
+      ></textarea>
+    </div>
+    <mat-form-field appearance="outline" class="w-100 mb-3">
+      <mat-label>Update Sub Program Title</mat-label>
+      <input
+        matInput
+        placeholder="Update Sub Program Title"
+        formControlName="subProgramTitle"
+      />
+    </mat-form-field>
+    <h3>Update Program Explanation</h3>
+    <textarea
+      rows="4"
+      cols="155"
+      placeholder="Update Program Explanation"
+      formControlName="programExplanation"
+    ></textarea>
+    <mat-form-field appearance="outline" class="w-100 mb-3">
+      <mat-label>Update What we do</mat-label>
+      <input
+        matInput
+        placeholder="Update What we do"
+        formControlName="updateWhatWeDo"
+      />
+    </mat-form-field>
+    <h3>Update What we do Explanation</h3>
+    <textarea
+      rows="6"
+      cols="155"
+      placeholder="Update What we do Explanation"
+      formControlName="updateWhatWeDoExplanation"
+    ></textarea>
+    <mat-form-field appearance="outline" class="w-100 mb-3">
+      <mat-label>How we do</mat-label>
+      <input
+        matInput
+        placeholder="Update What we do"
+        formControlName="howWeDo"
+      />
+    </mat-form-field>
+    <h3>Update How we do Explanation</h3>
+    <textarea
+      rows="4"
+      cols="155"
+      placeholder="Update How we do Explanation"
+      formControlName="howWeDoExplanation"
+    ></textarea>
+  </div>
+
+  <div *ngIf="heart" [formGroup]="formHeart">
+    <mat-form-field appearance="outline" class="w-100 mb-3">
+      <mat-label>Update Heart Title</mat-label>
+      <input
+        matInput
+        placeholder="Update Heart Title"
+        formControlName="heartTitle"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="w-100 mb-3">
+      <mat-label>Update Heart Content</mat-label>
+      <input
+        matInput
+        placeholder="Update Heart Content"
+        formControlName="heartContent"
+      />
+    </mat-form-field>
+    <h3>Update Heart Content Explanation</h3>
+    <textarea
+      rows="12"
+      cols="155"
+      placeholder="Update Heart Content Explanation"
+      formControlName="heartContentExpln"
+    ></textarea>
+  </div>
+
+  <div *ngIf="lungs" [formGroup]="formLungs">
+    <mat-form-field appearance="outline" class="w-100 mb-3">
+      <mat-label>Update Lungs Title</mat-label>
+      <input
+        matInput
+        placeholder="Update Lungs Title"
+        formControlName="lungsTitle"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="w-100 mb-3">
+      <mat-label>Update Heart Content</mat-label>
+      <input
+        matInput
+        placeholder="Update Lungs Content"
+        formControlName="lungsContent"
+      />
+    </mat-form-field>
+    <h3>Update Lungs Content Explanation</h3>
+    <textarea
+      rows="12"
+      cols="155"
+      placeholder="Update Lungs Content Explanation"
+      formControlName="lungsContentExpln"
+    ></textarea>
+  </div>
+  <div class="text-end">
+    <button mat-flat-button color="primary" class="w-10" (click)="Update()">
+      Update
+    </button>
+    <button
+      mat-stroked-button
+      color="primary"
+      class="w-10"
+      (click)="closeDialog()"
+    >
+      Close
+    </button>
+  </div>
+</div>

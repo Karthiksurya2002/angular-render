@@ -1,0 +1,174 @@
+.dashboardImg img {
+  width: 100vw;
+  height: 98vh;
+}
+.icon-row {
+  margin-top: -12vh !important;
+  display: flex;
+  gap: 12%;
+  align-items: center;
+}
+
+.icon-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  text-align: center;
+  gap: 12%;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.icon-box {
+  flex: 1;
+}
+
+.icon-box img {
+  width: 90%;
+  height: auto;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.icon-box p {
+  font-size: 20px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.rotate-img {
+  transition: transform 300ms ease;
+}
+
+.rotate-img:hover {
+  transform: scaleX(-1);
+}
+.edit_note {
+  font-size: 25px !important;
+}
+.abouthospital {
+  margin: 2vh 30vh 10vh 14vh;
+  /* margin-left: 15vw;
+  margin-right: 15vw; */
+  line-height: 40px;
+}
+
+.wlcm-lft h1 {
+  font-family: "Constantia";
+  font-size: 52px;
+  line-height: 60px;
+  margin-bottom: 35px;
+  position: relative;
+  color: #0c0809;
+  width: auto;
+  float: left;
+}
+.wlcm-lft p {
+  font-size: 20px;
+  line-height: 40px;
+  font-family: "proxima_nova_rgregular";
+  float: left;
+  width: 100%;
+  padding-bottom: 40px;
+}
+.wlcm-lft a {
+  float: left;
+  width: auto;
+  text-align: center;
+  border: 2px solid #97012e;
+  padding: 11px 47px 11px 30px;
+  font-size: 15px;
+  line-height: 20px;
+  font-family: "proxima_novasemibold";
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+  color: #97012e;
+  letter-spacing: 1px;
+  position: relative;
+}
+.wlcm-lft a:hover {
+  background-color: #97012e;
+  color: white;
+}
+.aboutFacilites {
+  margin: 10vh 24vh 10vh 14vh;
+}
+.abfacilites {
+  background-color: #97012e;
+  color: white;
+  padding: 46px 100px;
+}
+.abfacilites h2 {
+  font-family: "Constantia";
+  font-size: 52px;
+  line-height: 60px;
+  margin-bottom: 30px;
+  position: relative;
+  color: #fff;
+  width: auto;
+  float: left;
+  position: relative;
+}
+.abfacilites ul li {
+  font-size: 16px;
+  line-height: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  padding-left: 27px;
+  position: relative;
+  float: left;
+  width: 100%;
+}
+
+.abfacilites a {
+  width: auto;
+  text-align: center;
+  border: 2px solid #fff;
+  padding: 11px 47px 11px 30px;
+  font-size: 15px;
+  line-height: 20px;
+  font-family: "proxima_novasemibold";
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 1px;
+  position: relative;
+  margin-top: 35px;
+  float: left;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+.abfacilites a:hover {
+  background-color: white;
+  color: #97012e;
+}
+.quickFast {
+  margin-top: -10vh !important;
+  padding: 30px 0;
+  margin: 10vh 24vh 10vh 14vh;
+}
+.quickFast h2 {
+  font-family: "Constantia";
+  font-size: 52px;
+  margin-bottom: 55px;
+  text-align: center;
+}
+.quickFast h3 {
+  font-family: proxima_nova_rgbold;
+  font-size: 58px;
+  line-height: 65px;
+  padding-bottom: 12px;
+  color: #98002e;
+  font-weight: 1000;
+}
+.quickFast p {
+  font-family: "proxima_nova_rgregular";
+  font-size: 18px;
+  line-height: 22px;
+  color: #000;
+  text-align: center;
+}
+.hospitalFacilities {
+  margin-top: -18vh !important;
+}

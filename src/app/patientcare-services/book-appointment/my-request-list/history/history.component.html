@@ -1,0 +1,55 @@
+<div class="timeline-container">
+  <h3 class="timeline-title">Appointment History</h3>
+
+  <div class="timeline-row" *ngFor="let item of historyList; let last = last">
+    <div class="timeline-role">
+      <span
+        class="role-badge"
+        [ngClass]="item.role === 'Admin' ? 'admin' : 'user'"
+      >
+        <span>
+          <span>
+            {{
+              item.role === "Admin"
+                ? "ADMIN"
+                : item.role === "Doctor"
+                  ? "DOCTOR"
+                  : item.role === "User"
+                    ? "USER"
+                    : "PATIENT"
+            }}
+          </span>
+        </span>
+      </span>
+    </div>
+
+    <div class="timeline-center">
+      <div class="timeline-dot"></div>
+      <div class="timeline-line" *ngIf="!last"></div>
+    </div>
+
+    <div class="timeline-content">
+      <div class="action">
+        {{ item.action }} -
+        <span *ngIf="item.action != 'Completed'" class="text-muted">{{
+          item.opNumber
+        }}</span>
+        <a
+          matTooltip="View"
+          *ngIf="item.action == 'Completed'"
+          (click)="getDetails(item)"
+        >
+          {{ item.opNumber }}
+        </a>
+      </div>
+      <div class="remarks">{{ item.remarks }}</div>
+      <div class="remarks" *ngIf="item?.followUp">{{ item?.followUp }}</div>
+      <div class="time">
+        {{ item.createdAt | date: "dd MMM yyyy, hh:mm a" }}
+      </div>
+    </div>
+  </div>
+  <div class="text-end">
+    <button mat-stroked-button mat-dialog-close>Cancel</button>
+  </div>
+</div>

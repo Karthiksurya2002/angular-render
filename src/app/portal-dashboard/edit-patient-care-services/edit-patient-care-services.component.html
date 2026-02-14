@@ -1,0 +1,104 @@
+<div class="container background-container p-3">
+  <h2 class="m-0 mb-4">Edit Patient Care Service</h2>
+  <div class="row d-flex align-items-center">
+    <div class="col-md-1"></div>
+    <div class="col-md-2">
+      <h3>{{ fieldName1 }}</h3>
+      <img *ngIf="image1" [src]="image1" />
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>
+          <span class="text-primary">*</span>Edit Heart & Lung Transplant
+          Name</mat-label
+        >
+        <input matInput [(ngModel)]="fieldName1" />
+      </mat-form-field>
+      <div class="row">
+        <app-file-upload
+          (messageEvent)="filePath($event, '1')"
+        ></app-file-upload>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <h3>{{ fieldName2 }}</h3>
+      <img *ngIf="image2" [src]="image2" />
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>
+          <span class="text-primary">*</span>Edit Emergency Information
+          Name</mat-label
+        >
+        <input matInput [(ngModel)]="fieldName2" />
+      </mat-form-field>
+      <div class="row">
+        <app-file-upload
+          (messageEvent)="filePath($event, '2')"
+        ></app-file-upload>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <h3>{{ fieldName3 }}</h3>
+      <img *ngIf="image3" [src]="image3" />
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>
+          <span class="text-primary">*</span>Edit Super Specialties</mat-label
+        >
+        <input matInput [(ngModel)]="fieldName3" />
+      </mat-form-field>
+      <div class="row">
+        <app-file-upload
+          (messageEvent)="filePath($event, '3')"
+        ></app-file-upload>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <img *ngIf="image4" [src]="image4" />
+      <h3>{{ fieldName4 }}</h3>
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>
+          <span class="text-primary">*</span>Edit Request an
+          Appointment</mat-label
+        >
+        <input matInput [(ngModel)]="fieldName4" />
+      </mat-form-field>
+      <div class="row">
+        <app-file-upload
+          (messageEvent)="filePath($event, '4')"
+        ></app-file-upload>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <h3>{{ fieldName5 }}</h3>
+      <img *ngIf="image5" [src]="image5" />
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>
+          <span class="text-primary">*</span>Edit Patient Reports</mat-label
+        >
+        <input matInput [(ngModel)]="fieldName5" />
+      </mat-form-field>
+      <div class="row">
+        <app-file-upload
+          (messageEvent)="filePath($event, '5')"
+        ></app-file-upload>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10">
+      <p class="text-danger">
+        <span class="text-primary">*</span> No fields are mantatory here.
+      </p>
+    </div>
+    <div class="col-md-2">
+      <button mat-flat-button color="primary" class="w-10" (click)="update()">
+        Update
+      </button>
+      <button
+        mat-stroked-button
+        color="primary"
+        class="w-10"
+        (click)="closeDialog()"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</div>

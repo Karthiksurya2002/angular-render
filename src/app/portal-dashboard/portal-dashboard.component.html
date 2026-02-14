@@ -1,0 +1,153 @@
+<section class="dashboardImage">
+  <div class="text-end" *ngIf="editAccess">
+    <mat-icon
+      class="edit_note"
+      (click)="editAdmin('image')"
+      matTooltip="Edit Admin"
+      ><span class="material-symbols-outlined"> edit_note </span></mat-icon
+    >
+  </div>
+
+  <div class="dashboardImg">
+    <img *ngIf="imageUrl" [src]="imageUrl" alt="Hospital View" />
+  </div>
+</section>
+
+<div class="text-end" *ngIf="editAccess">
+  <mat-icon class="edit_note" (click)="editAdmin('option')" matTooltip="Edit"
+    ><span class="material-symbols-outlined"> edit_note </span></mat-icon
+  >
+</div>
+<div class="col-md-12 container icon-row">
+  <div class="icon-box" (click)="routerToPage('heart&lungstransplant')">
+    <img *ngIf="image1" [src]="image1" class="rotate-img" />
+    <p>HEART & LUNG<br />TRANSPLANT</p>
+  </div>
+
+  <div class="icon-box" [routerLink]="['/patientcare/ambulance-services']">
+    <img *ngIf="image2" [src]="image2" class="rotate-img" />
+    <p>EMERGENCY<br />INFORMATION</p>
+  </div>
+
+  <div class="icon-box" (click)="routerToPage('superSpecialties')">
+    <img *ngIf="image3" [src]="image3" class="rotate-img" />
+    <p>SUPER<br />SPECIALTIES</p>
+  </div>
+
+  <div class="icon-box" [routerLink]="['/report/patient-report']">
+    <img *ngIf="image4" [src]="image4" class="rotate-img" />
+    <p>PATIENT<br />REPORTS</p>
+  </div>
+
+  <div class="icon-box" (click)="routerToPage('bookappointment')">
+    <img *ngIf="image5" [src]="image5" class="rotate-img" />
+    <p>REQUEST AN<br />APPOINTMENT</p>
+  </div>
+</div>
+
+<section class="hospitalInfo&Logo">
+  <div class="row container abouthospital wlcm-lft">
+    <div class="col-md-6">
+      <div class="text-end" *ngIf="editAccess">
+        <mat-icon
+          class="edit_note"
+          (click)="editAdmin('hospitalInfo')"
+          matTooltip="Edit"
+          ><span class="material-symbols-outlined"> edit_note </span></mat-icon
+        >
+      </div>
+      <!-- <h1>
+      Welcome to <br />
+      SHMP Hospital
+    </h1> -->
+      <h1>{{ title }}</h1>
+      <br />
+      <!-- <p>
+      SHMP Hospitals provides total health care to its patients, with the
+      highest levels of skill, professionalism, and ethical practice, leading to
+      their effective care and treatment at affordable costs. SHMP Hospitals
+      facilitates medical education and research and is committed to continuous
+      quality improvement.
+    </p> -->
+      <p>{{ description }}</p>
+      <!-- <a>Read More</a> -->
+      <a>{{ buttonName }}</a>
+    </div>
+    <!-- <div class="col-md-1"></div> -->
+    <div class="col-md-6">
+      <div class="text-end" *ngIf="editAccess">
+        <mat-icon
+          class="edit_note"
+          (click)="editAdmin('hospitalBestLogo')"
+          matTooltip="Edit"
+          ><span class="material-symbols-outlined"> edit_note </span></mat-icon
+        >
+      </div>
+
+      <img *ngIf="certificsLogoImage" [src]="certificsLogoImage" alt="" />
+    </div>
+  </div>
+</section>
+<section class="hospitalFacilities">
+  <div class="row aboutFacilites">
+    <div class="text-end" *ngIf="editAccess">
+      <mat-icon
+        class="edit_note"
+        (click)="editAdmin('hospitalFacilities')"
+        matTooltip="Edit"
+        ><span class="material-symbols-outlined"> edit_note </span></mat-icon
+      >
+    </div>
+    <div class="col-md-7">
+      <img *ngIf="imageFacilities" [src]="imageFacilities" />
+    </div>
+    <div class="col-md-5 abfacilites">
+      <div>
+        <h2>{{ titleFacilities }}</h2>
+        <div class="row" *ngFor="let data of facilitiesDetails">
+          <ul>
+            <li>{{ data }}</li>
+          </ul>
+        </div>
+        <a (click)="routeService()">{{ buttonName }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="quickFast">
+  <div>
+    <h2>Quick Insights</h2>
+  </div>
+
+  <div class="row text-center">
+    <div class="col-md-4">
+      <h3>{{ dashboard.appointmentsToday }}</h3>
+      <p>Appointments Today</p>
+    </div>
+
+    <div class="col-md-4">
+      <h3>{{ dashboard.slotUtilizationPercent }}%</h3>
+      <p>Slot Utilization</p>
+    </div>
+
+    <div class="col-md-4">
+      <h3>{{ dashboard.cancelledOrRescheduledToday }}</h3>
+      <p>Cancelled / Rescheduled</p>
+    </div>
+
+    <div class="col-md-4">
+      <h3>{{ dashboard.availableSlotsToday }}</h3>
+      <p>Available Slots</p>
+    </div>
+
+    <div class="col-md-4">
+      <h3>{{ getAvgApprovalText(dashboard.avgApprovalTimeMinutes) }}</h3>
+      <p>Avg Approval Time</p>
+    </div>
+
+    <div class="col-md-4">
+      <h3>{{ dashboard.reusedSlots }}</h3>
+      <p>Reused Slots</p>
+    </div>
+  </div>
+</section>

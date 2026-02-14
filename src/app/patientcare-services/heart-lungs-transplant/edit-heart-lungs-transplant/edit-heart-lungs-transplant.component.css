@@ -1,0 +1,5 @@
+.container {
+  padding: 20px;
+  background: url("/backgroundimage.jpg") no-repeat center center;
+  background-size: cover;
+}

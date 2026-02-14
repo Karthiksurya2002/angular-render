@@ -1,0 +1,51 @@
+.heart-lungs {
+}
+.baseImage img {
+  width: 100vw;
+}
+.contant {
+  /* padding: 4vw 15vw !important; */
+  /* background: white; */
+  padding: 0vw 15vw !important;
+  background: #fcf8f3;
+}
+.innerText {
+  background: white;
+  padding: 30px;
+}
+.contant p {
+  text-align: left;
+  color: #333333;
+  font-size: 18px;
+  line-height: 28px;
+  margin-bottom: 22px;
+}
+strong {
+  font-size: 18px;
+}
+.contant.innerText strong {
+  font-family: "proxima_novasemibold";
+  font-weight: normal;
+}
+h2 {
+  width: 100%;
+  float: left;
+  color: #96012c;
+  font-family: "Constantia";
+  font-size: 30px;
+  line-height: 38px;
+  margin-bottom: 15px;
+}
+.customfooter {
+  margin-left: 40vh;
+  margin-right: 40vh;
+  margin-top: 15vh;
+  margin-bottom: 15vh;
+}
+.rotate-img {
+  transition: transform 300ms ease;
+}
+
+.rotate-img:hover {
+  transform: scaleX(-1);
+}

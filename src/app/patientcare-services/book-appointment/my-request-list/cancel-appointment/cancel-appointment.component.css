@@ -1,0 +1,50 @@
+.container {
+  max-width: 420px;
+  margin: 40px auto;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #c62828; /* warning red */
+  margin-bottom: 12px;
+}
+
+p {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+button {
+  width: 100%;
+  max-width: 260px;
+  margin: 6px 0;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+/* Optional: subtle hover polish */
+button:hover {
+  transform: translateY(-1px);
+  transition: 0.2s ease;
+}
+button:active {
+  transform: translateY(0);
+  transition: 0.1s ease;
+}
+@media (max-width: 480px) {
+  .container {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  button {
+    max-width: 100%;
+  }
+}

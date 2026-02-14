@@ -1,0 +1,30 @@
+.customfooter {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.customfooter h2 {
+  margin-top: 10px;
+  font-size: 1.5rem;
+}
+
+.customfooter a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.customfooter a:hover {
+  text-decoration: underline;
+}
+
+.rotate-img {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s;
+}
+
+.rotate-img:hover {
+  transform: rotate(20deg);
+}

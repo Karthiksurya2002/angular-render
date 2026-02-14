@@ -1,0 +1,38 @@
+<h1 id="printTitle">SHMP Hospital</h1>
+
+<div id="print-content" class="container">
+  <h2>Appointment Completed Details</h2>
+
+  <p><strong>OP Number:</strong> {{ data.opNumber }}</p>
+  <p>
+    <strong>Patient Name:</strong>
+    {{ data?.patientFirstName }} {{ data?.patientLastName }}
+  </p>
+  <p><strong>Doctor:</strong> {{ data?.patientDoctorName }}</p>
+
+  <p>
+    <strong>Prescription:</strong>
+    {{ data?.consultationPrescription }}
+  </p>
+
+  <p>
+    <strong>Diagnosis / Clinical Notes:</strong>
+    {{ data?.consultationClinicNotes }}
+  </p>
+
+  <p>
+    <strong>Advice / Recommendations:</strong>
+    {{ data?.consultationAdvice }}
+  </p>
+
+  <div *ngIf="data?.consultationFollowUp">
+    <p>
+      <strong>Follow Up Date:</strong>
+      {{ data?.appointmentCreatedAt | date: "dd MMM yyyy, h:mm a" }}
+    </p>
+    <p><strong>Follow Up Slot:</strong> {{ data?.selectedSlot }}</p>
+  </div>
+</div>
+<button mat-raised-button color="primary" (click)="printPrescription()">
+  Print / Save as PDF
+</button>

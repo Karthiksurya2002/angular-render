@@ -1,0 +1,111 @@
+<div class="consultation-container" [formGroup]="completeForm">
+  <!-- Header -->
+  <div class="header">
+    <h2>Complete Consultation</h2>
+    <button mat-icon-button class="close-btn" (click)="closeDialog()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <!-- Patient Info -->
+  <div class="patient-info">
+    <span
+      ><b>Patient:</b> {{ this.data?.data?.patientFirstName }}
+      {{ this.data?.data?.patientLastName }}
+    </span>
+    <span><b>OP Number:</b>{{ this.data?.data?.opNumber }}</span>
+    <span><b>Date:</b> {{ this.data?.data?.patientPreferredDate }}</span>
+  </div>
+
+  <!-- Diagnosis -->
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label>Diagnosis / Clinical Notes <span class="required">*</span></label>
+      <textarea
+        rows="4"
+        formControlName="clinicalNotes"
+        placeholder="Enter diagnosis and clinical notes here..."
+      ></textarea>
+    </div>
+
+    <!-- Prescription -->
+    <div class="form-group col-md-6">
+      <label>Prescription<span class="required">*</span></label>
+      <textarea
+        rows="4"
+        formControlName="prescrition"
+        placeholder="Enter prescribed medicines and instructions here..."
+      ></textarea>
+    </div>
+
+    <!-- Advice -->
+    <div class="form-group col-md-6">
+      <label>Advice / Recommendations</label>
+      <textarea
+        rows="3"
+        formControlName="advice"
+        placeholder="Enter any advice or follow-up instructions here..."
+      ></textarea>
+    </div>
+
+    <!-- Follow-up Date -->
+
+    <div class="form-group col-md-6" *ngIf="showFollowUp">
+      <label>Follow-Up Date<span class="required">*</span></label>
+      <mat-form-field appearance="outline" class="full-width">
+        <input
+          matInput
+          [matDatepicker]="picker"
+          placeholder="Select follow-up date"
+          [min]="minDate"
+          formControlName="followUpDate"
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="form-group col-md-6" *ngIf="showFollowUp">
+    <span><b>Follow-Up Slot</b><span class="required">*</span></span>
+
+    <select
+      class="newfont custom-select w-40"
+      id="specialty-select"
+      (change)="onSelectShiftDetails($event)"
+      formControlName="followUpSlot"
+    >
+      <option *ngFor="let data of timeSlots" [value]="data">
+        {{ data }}
+      </option>
+    </select>
+  </div>
+  <!-- Footer Buttons -->
+  <div class="footer">
+    <span
+      ><mat-checkbox formControlName="followUpRequired"
+        ><b>Follow-Up Required</b></mat-checkbox
+      ></span
+    >
+    <button mat-stroked-button color="warn" (click)="closeDialog()">
+      Cancel
+    </button>
+    <button
+      *ngIf="slotValidation"
+      mat-raised-button
+      color="primary"
+      [disabled]="completeForm.invalid || !slotValidation"
+      (click)="saveConsultations()"
+    >
+      Save & Complete Consultation
+    </button>
+    <button
+      *ngIf="!slotValidation"
+      mat-raised-button
+      color="primary"
+      [disabled]="completeForm.invalid"
+      (click)="saveConsultations()"
+    >
+      Save & Complete Consultation
+    </button>
+  </div>
+</div>

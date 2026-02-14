@@ -1,0 +1,66 @@
+<div class="container p-3 background-container" [formGroup]="facilitiesForm">
+  <h4>
+    <span class="text-primary fs-6">* </span>Update Hospital Facilities Image
+  </h4>
+  <div class="mt-2">
+    <h5></h5>
+    <app-file-upload (messageEvent)="filePath($event)"></app-file-upload>
+  </div>
+  <div class="row col-md-12">
+    <div class="col-md-6">
+      <h4><span class="text-primary fs-6">* </span>Update Title Facilities</h4>
+      <mat-form-field appearance="outline" class="w-20">
+        <input
+          matInput
+          placeholder="Update Button Name"
+          formControlName="titleFacilities"
+        />
+      </mat-form-field>
+    </div>
+    <div class="col-md-6">
+      <h4><span class="text-primary fs-6">* </span>Update Button Name</h4>
+      <mat-form-field appearance="outline" class="w-20">
+        <input
+          matInput
+          placeholder="Update Button Name"
+          formControlName="buttonName"
+        />
+      </mat-form-field>
+    </div>
+  </div>
+
+  <h4>
+    <span class="text-primary fs-6">* </span>Update Hospital Facilities Details
+  </h4>
+  <div>
+    <textarea
+      rows="6"
+      cols="80"
+      formControlName="updateHospitalFacilities"
+      placeholder="Update Hospital Facilities Details..."
+    ></textarea>
+    <br />
+    <p>
+      <span class="text-warning fs-6">* </span>Note Please Add Hospital
+      Facilities Details One By One using enter key.
+    </p>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <p class="text-danger">
+        <span class="text-warning fs-6">* </span> Request for Input Update in
+        Screen
+      </p>
+      <p class="text-danger">
+        <span class="text-primary">*</span> No fields are mantatory here.
+      </p>
+    </div>
+
+    <div class="col-md-4 d-flex pt-3">
+      <button mat-flat-button color="primary" (click)="saveImage(); saveInfo()">
+        Save
+      </button>
+      <button mat-stroked-button (click)="closeDialog()">Cancel</button>
+    </div>
+  </div>
+</div>

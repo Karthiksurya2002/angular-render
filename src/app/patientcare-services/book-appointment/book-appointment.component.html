@@ -1,0 +1,174 @@
+<div class="">
+  <!-- Book Appointment Image -->
+  <div class="appointment">
+    <div class="text-end">
+      <mat-icon
+        *ngIf="editAccess"
+        class="edit_note"
+        matTooltip="Edit Admin"
+        (click)="editAdmin('image')"
+        ><span class="material-symbols-outlined"> edit_note </span></mat-icon
+      >
+    </div>
+    <img [src]="imageUrl" alt="Book Appointment" />
+  </div>
+
+  <br />
+  <div class="customContainer">
+    <!-- Add Doctor Functionality -->
+    <div>
+      <mat-icon
+        *ngIf="editAccess"
+        class="edit_note adjust"
+        matTooltip="Add Doctor"
+        (click)="editAdmin('addDoctor')"
+        ><span class="material-symbols-outlined">
+          create_new_folder
+        </span></mat-icon
+      >
+    </div>
+    <div class="col-md-5 mix-pad" *ngIf="showDoctors">
+      <h2 class="mb-0">Super Specialties Doctors ! <span></span></h2>
+    </div>
+    <!-- Edit display Information of fields -->
+    <div class="text-end" *ngIf="!showDoctors">
+      <mat-icon
+        *ngIf="editAccess"
+        class="edit_note"
+        matTooltip="Edit Admin"
+        (click)="editAdmin('doctorOption')"
+        ><span class="material-symbols-outlined"> edit_note </span></mat-icon
+      >
+    </div>
+    <!-- Display All fields Information -->
+    <div [formGroup]="searchForm">
+      <div class="row align-items-center" *ngIf="!showDoctors">
+        <div class="col-md-5 mix-pad">
+          <h2 class="mb-0">{{ baTitle }} <span></span></h2>
+        </div>
+
+        <div class="col-md-2 text-end">
+          <h4 class="mb-0 newfont">Select Shift</h4>
+        </div>
+
+        <div class="col-md-3">
+          <select
+            class="newfont custom-select w-40"
+            id="specialty-select"
+            (change)="onSelectShiftDetails($event)"
+          >
+            <option value="">Select Shift</option>
+            <option *ngFor="let data of shiftDetails" [value]="data">
+              {{ data }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <br />
+      <div class="d-flex align-items-middle" *ngIf="!showDoctors">
+        <div class="col-md-3">
+          <h4 class="newfont">{{ baSpecialties }}</h4>
+        </div>
+        <div class="col-md-3">
+          <select
+            class="newfont custom-select"
+            id="specialty-select"
+            [(ngModel)]="selectedSpecialty"
+            (change)="onSelect($event)"
+          >
+            <option *ngFor="let data of baSpecialtiesCategory" [value]="data">
+              {{ data }}
+            </option>
+          </select>
+        </div>
+
+        <div class="col-md-1 or">{{ baOrLabel }}</div>
+        <div class="col-md-2">
+          <h4 class="newfont">{{ baSearchLabel }}</h4>
+        </div>
+        <div class="col-md-2">
+          <input
+            type="text"
+            placeholder="Search for doctors..."
+            class="w-100 mb-3 custom-input"
+            formControlName="searchByDoctor"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Display All Doctors Information and Image -->
+    <div class="row" style="margin-top: 35px">
+      <ng-container *ngIf="!noDoctorFound">
+        <div
+          class="col-md-3 imageSpacing"
+          *ngFor="let doctor of mergeAllDoctor"
+        >
+          <div class="doctor-card">
+            <div class="doctorsProfile">
+              <div class="text-end" *ngIf="editAccess">
+                <button
+                  mat-icon-button
+                  [matMenuTriggerFor]="menu"
+                  class="menu-btn"
+                >
+                  <mat-icon>more_vert</mat-icon>
+                </button>
+
+                <mat-menu #menu="matMenu">
+                  <button
+                    mat-menu-item
+                    (click)="selectedDoctorDetails(doctor, 'doctorList')"
+                  >
+                    <mat-icon>edit</mat-icon>
+                    <span>Edit</span>
+                  </button>
+
+                  <button
+                    mat-menu-item
+                    (click)="deleteDoctorDetails(doctor, 'doctorList')"
+                  >
+                    <mat-icon color="warn">delete</mat-icon>
+                    <span>Delete</span>
+                  </button>
+                </mat-menu>
+              </div>
+              <img [src]="getDoctorImages(doctor)" />
+            </div>
+
+            <div class="doctorsName" (click)="bookAppointment(doctor)">
+              <h3>{{ doctor?.adDoctorName }}</h3>
+
+              <p>{{ doctor?.adDesignation }}</p>
+              <span>{{ doctor?.adSpecialties }}</span> <br />
+              <span *ngIf="doctor?.adShift == 'Evening'">
+                🕒 Evening Shift (2 AM – 6 PM)</span
+              >
+              <span *ngIf="doctor?.adShift == 'Morning'">
+                🕒 Morning Shift (9 AM – 1 PM)</span
+              >
+              <span *ngIf="doctor?.adShift == 'Night'">
+                🕒 Night Shift (7 PM – 12 PM)</span
+              >
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="noDoctorFound">
+        <div class="col-md-3 imageSpacing">
+          <div class="doctor-card">
+            <div class="doctorsProfile">
+              <img src="/photo.png" />
+            </div>
+
+            <div class="doctorsName">
+              <p>No Doctor Found...</p>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
+<!-- <app-like-share></app-like-share> -->

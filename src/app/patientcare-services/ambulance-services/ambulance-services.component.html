@@ -1,0 +1,80 @@
+<section class="dashboardImage">
+  <div class="text-end" *ngIf="editAccess">
+    <mat-icon
+      class="edit_note"
+      (click)="editAdmin('image')"
+      matTooltip="Edit Admin"
+      ><span class="material-symbols-outlined"> edit_note </span></mat-icon
+    >
+  </div>
+
+  <div class="dashboardImg">
+    <img *ngIf="imageUrl" [src]="imageUrl" alt="Hospital View" />
+  </div>
+</section>
+<div class="content">
+  <h3><b>Ambulance Service</b></h3>
+  <!-- <div style="display: flex; gap: 20px; align-items: flex-start">
+   
+    <img
+      src="/ambulance_service2.jpg"
+      alt="Ambulances"
+      style="width: 200px; height: auto"
+    />
+
+   
+    <div>
+      <h3>Help Line No :</h3>
+      <p>+91-7449108108, +91-9952149911</p>
+    </div>
+  </div> -->
+
+  <div style="margin-top: 30px">
+    <div style="display: flex; gap: 10px; margin-bottom: 15px">
+      <img src="/circle.png" alt="arrow" style="width: 20px; height: 20px" />
+      <p>Integral part of Emergency Medicine Department.</p>
+    </div>
+
+    <div style="display: flex; gap: 10px; margin-bottom: 15px">
+      <img src="/circle.png" alt="arrow" style="width: 20px; height: 20px" />
+      <p>We provide 24 X 7 ambulances services</p>
+    </div>
+
+    <div style="display: flex; gap: 10px; margin-bottom: 15px">
+      <img src="/circle.png" alt="arrow" style="width: 20px; height: 20px" />
+      <p>
+        We have a fleet of ambulances with the necessary facilities, like
+        monitors, defibrillators, ventilators and continuous oxygen supply.
+      </p>
+    </div>
+
+    <div style="display: flex; gap: 10px; margin-bottom: 15px">
+      <img src="/circle.png" alt="arrow" style="width: 20px; height: 20px" />
+      <p>
+        The fleet is supported by paramedics skilled in transportation of
+        seriously ill patients and victims of road traffic accident.
+      </p>
+    </div>
+
+    <div style="display: flex; gap: 10px; margin-bottom: 15px">
+      <img src="/circle.png" alt="arrow" style="width: 20px; height: 20px" />
+      <p>
+        The Paramdeics are trained in Advanced Cardiac Life Support and Advanced
+        Trauma Life Support
+      </p>
+    </div>
+
+    <div style="display: flex; gap: 10px; margin-bottom: 15px">
+      <img src="/circle.png" alt="arrow" style="width: 20px; height: 20px" />
+      <p>
+        Cardiac Ambulance : It has advanced technology system with Cardiac
+        equipment's which functions like Mini ICU on wheels.
+      </p>
+    </div>
+
+    <div style="display: flex; gap: 10px; margin-bottom: 15px">
+      <img src="/circle.png" alt="arrow" style="width: 20px; height: 20px" />
+      <p>For bookings, kindly contact +91-7449108108, +91-9952149911</p>
+    </div>
+  </div>
+</div>

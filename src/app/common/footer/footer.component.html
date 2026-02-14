@@ -1,0 +1,132 @@
+<!-- <footer class="login-footer">
+  <div class="container">
+    <div class="row text-center text-md-start">
+      <div class="col-md-4">
+        <h5>Smart Hospital Management Portal</h5>
+        <p>
+          Secure digital platform to simplify hospital operations and improve
+          patient care.
+        </p>
+      </div>
+
+      <div class="col-md-4">
+        <h5>Contact</h5>
+        <p>📍 Dharapuram Main Road</p>
+        <p>📞 +91 9876543210</p>
+      </div>
+
+      <div class="col-md-4">
+        <h5>Support</h5>
+        <p>🚑 Emergency: 108</p>
+        <p>📧 {{ email }}</p>
+      </div>
+    </div>
+
+    <div class="text-center mt-3 small">
+      © 2025 Smart Hospital Management Portal
+    </div>
+  </div>
+</footer> -->
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left d-flex align-items-center">
+      <div class="logo-box" style="margin-left: 5vw">
+        <h3 class="text-center">
+          Smart Hospital <br />
+          Management Portal
+        </h3>
+        <span class="underline"></span>
+        <div style="margin-left: 2vw">
+          <img src="/logo.png" alt="SHMP Hospitals" />
+        </div>
+      </div>
+
+      <!-- <div class="social-icons">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-linkedin-in"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-youtube"></i>
+        <i class="fab fa-whatsapp"></i>
+      </div> -->
+
+      <!-- <p class="feedback-text">For suggestions and feedback</p> -->
+
+      <!-- <img src="assets/qr-code.png" class="qr" alt="QR Code" /> -->
+
+      <!-- <p class="app-text">Patient App</p> -->
+      <!-- <img src="assets/google-play.png" class="play-store" /> -->
+    </div>
+
+    <!-- MIDDLE SECTION -->
+    <div class="footer-middle">
+      <h3>Get in Touch</h3>
+      <span class="underline"></span>
+
+      <p class="hospital-name">SHMP Hospitals</p>
+      <span class="underline"></span>
+      <p>📍 Peelamedu, Coimbatore - 641 004<br />Tamil Nadu, INDIA.</p>
+      <span class="underline"></span>
+      <p (click)="openEmail()" matTooltip="Email to">✉ {{ email }}</p>
+      <span class="underline"></span>
+      <p>📞 0422 - 434 5353</p>
+      <p>📞 0422 - 458 7999</p>
+
+      <p class="helpline">☎ Help Line: +91 9952149911</p>
+      <span class="underline"></span>
+    </div>
+
+    <!-- RIGHT SECTION -->
+    <div class="footer-right">
+      <h3>Quick Links</h3>
+      <span class="underline"></span>
+
+      <ul>
+        <li
+          [routerLink]="['/patientcare/book-appointment']"
+          matTooltip="Redirect to Home"
+        >
+          Home
+          <span class="sub-text"> ★ Dashboard</span>
+        </li>
+        <span class="underline"></span>
+        <li
+          [routerLink]="['/patientcare/my-request-list']"
+          matTooltip="Redirect to My Request"
+        >
+          My Request
+          <span class="sub-text"> ★ Request Status</span>
+        </li>
+        <span class="underline"></span>
+        <li
+          [routerLink]="['/report/patient-report']"
+          matTooltip="Redirect to  My Reports List"
+        >
+          My Reports List
+          <span class="sub-text"> ★ Medical Records</span>
+        </li>
+        <span class="underline"></span>
+        <li
+          [routerLink]="['/patientcare/book-appointment']"
+          matTooltip="Redirect to   Book Appointment"
+        >
+          Book Appointment
+          <span class="sub-text"> ★ Schedule Visit</span>
+        </li>
+        <span class="underline"></span>
+        <li matTooltip="Redirect to   About us" (click)="openAbout()">
+          About us
+          <span class="sub-text"> ★ Our Services</span>
+        </li>
+        <span class="underline"></span>
+      </ul>
+    </div>
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div class="footer-bottom">
+    <p>Copyright © 2026 PSG Hospitals. All Rights Reserved.</p>
+    <p>Privacy Policy | Disclaimer | Terms of Use</p>
+  </div>
+</footer>

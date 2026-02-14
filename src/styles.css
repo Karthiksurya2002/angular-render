@@ -1,0 +1,67 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.custom-snackbar {
+  background-color: green !important; /* background */
+  color: #ffffff !important; /* text color */
+  width: 450px !important;
+  height: auto;
+  padding: 16px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+}
+.custom-snackbarerror {
+  background-color: red !important; /* background */
+  color: #ffffff !important; /* text color */
+  width: 450px !important;
+  height: auto;
+  padding: 16px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+}
+textarea {
+  resize: vertical;
+  border: solid 3px #9c002f;
+  border-radius: 16px;
+}
+.background-container {
+  padding: 20px;
+  background: url("/backgroundimage.jpg") no-repeat center center;
+  background-size: cover;
+}
+button {
+  cursor: pointer;
+}
+a {
+  cursor: pointer;
+}
+img {
+  cursor: pointer;
+}
+mat-icon {
+  cursor: pointer;
+}
+select {
+  cursor: pointer;
+}
+input {
+  cursor: pointer;
+}
+/* Default dialog backdrop */
+.cdk-overlay-backdrop {
+  background: rgba(0, 0, 0, 0.35) !important;
+}
+
+/* Dialog container */
+.mat-mdc-dialog-container {
+  border-radius: 12px;
+}

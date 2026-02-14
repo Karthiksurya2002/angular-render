@@ -1,0 +1,280 @@
+<div
+  class="container p-4"
+  [formGroup]="appointmentForm"
+  (ngSubmit)="onSubmit()"
+>
+  <h2>Request an Appointment</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <mat-form-field
+        appearance="outline"
+        floatLabel="always"
+        class="w-100 mb-3"
+      >
+        <mat-label>Patient Name</mat-label>
+        <input
+          matInput
+          placeholder="Enter Patient First Name"
+          formControlName="patientFirstName"
+          required
+          readonly
+        />
+        <mat-error *ngIf="hasError?.patientFirstName?.touched">
+          Patient first name is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-md-4">
+      <mat-form-field
+        appearance="outline"
+        floatLabel="always"
+        class="w-100 mb-3"
+      >
+        <mat-label>Patient Last Name</mat-label>
+        <input
+          matInput
+          placeholder="Enter Patient Last Name"
+          formControlName="patientLastName"
+          required
+          readonly
+        />
+        <mat-error *ngIf="hasError?.patientLastName?.touched">
+          Patient last name is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-md-4">
+      <mat-form-field
+        appearance="outline"
+        floatLabel="always"
+        class="w-100 mb-3"
+      >
+        <mat-label>Patient Email Id</mat-label>
+        <input
+          matInput
+          placeholder="Enter Patient Email Id"
+          formControlName="patientEmailId"
+          required
+        />
+        <mat-error
+          *ngIf="
+            hasError?.patientEmailId?.touched ||
+            hasError?.patientEmailId?.invalid
+          "
+        >
+          Patient email id is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-md-4">
+      <mat-form-field
+        appearance="outline"
+        floatLabel="always"
+        class="w-100 mb-3"
+      >
+        <mat-label>Patient Mobile</mat-label>
+        <input
+          matInput
+          placeholder="Enter Patient Mobile"
+          formControlName="patientMobile"
+          required
+          readonly
+        />
+        <mat-error *ngIf="hasError?.patientMobile?.touched">
+          Patient mobile is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="col-md-4">
+      <mat-form-field
+        appearance="outline"
+        floatLabel="always"
+        class="w-100 mb-3"
+      >
+        <mat-label>Patient Specialty</mat-label>
+        <input
+          matInput
+          placeholder="Enter Patient Specialty"
+          formControlName="patientSpecialty"
+          required
+          readonly
+        />
+        <mat-error *ngIf="hasError?.patientSpecialty?.touched">
+          Patient specialty is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-md-4">
+      <mat-form-field
+        appearance="outline"
+        floatLabel="always"
+        class="w-100 mb-3"
+      >
+        <mat-label>Patient Age</mat-label>
+        <input
+          matInput
+          placeholder="Enter Patient Age"
+          formControlName="patientAge"
+          required
+        />
+        <mat-error *ngIf="hasError?.patientAge?.touched">
+          Patient age is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-md-4">
+      <mat-form-field
+        appearance="outline"
+        floatLabel="always"
+        class="w-100 mb-3"
+      >
+        <mat-label>Patient Preferred Date</mat-label>
+
+        <input
+          matInput
+          [matDatepicker]="picker"
+          formControlName="patientPreferredDate"
+          placeholder="Choose a date"
+          required
+          [min]="minDate"
+        />
+
+        <mat-datepicker-toggle matSuffix [for]="picker">
+        </mat-datepicker-toggle>
+
+        <mat-datepicker #picker></mat-datepicker>
+
+        <mat-error *ngIf="hasError.patientPreferredDate?.touched">
+          Patient preferred date is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-md-4">
+      <mat-form-field
+        appearance="outline"
+        floatLabel="always"
+        class="w-100 mb-3"
+      >
+        <mat-label>Patient Date of Birth</mat-label>
+
+        <input
+          matInput
+          [matDatepicker]="pickerr"
+          formControlName="patientDOB"
+          placeholder="Select Date of Birth"
+          required
+          [max]="minDate"
+          (dateChange)="onDateChange($event)"
+        />
+
+        <mat-datepicker-toggle matSuffix [for]="pickerr">
+        </mat-datepicker-toggle>
+
+        <mat-datepicker #pickerr></mat-datepicker>
+
+        <mat-error *ngIf="hasError.patientDOB?.touched">
+          Patient date of birth is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-md-4">
+      <mat-form-field
+        appearance="outline"
+        floatLabel="always"
+        class="w-100 mb-3"
+      >
+        <mat-label>Patient DoctorName</mat-label>
+        <input
+          matInput
+          placeholder="Enter Patient DoctorName"
+          formControlName="patientDoctorName"
+          required
+          readonly
+        />
+        <mat-error *ngIf="hasError?.patientDoctorName?.touched">
+          Patient doctor name is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-md-4">
+      <select
+        class="newfont custom-select w-70"
+        id="specialty-select"
+        (change)="onSelectShiftDetails($event)"
+        formControlName="slot"
+      >
+        <option *ngFor="let data of timeSlots" [value]="data">
+          {{ data }}
+        </option>
+      </select>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label class="d-block mb-2 fw-semibold">Patient Gender</label>
+
+      <mat-radio-group formControlName="patientGender" class="d-flex gap-3">
+        <mat-radio-button value="male">Male</mat-radio-button>
+        <mat-radio-button value="female">Female</mat-radio-button>
+        <mat-radio-button value="transgender">Transgender</mat-radio-button>
+      </mat-radio-group>
+
+      <mat-error *ngIf="hasError?.patientGender?.invalid">
+        Patient gender is required
+      </mat-error>
+    </div>
+    <div class="col-md-6">
+      <mat-form-field
+        appearance="outline"
+        floatLabel="always"
+        class="w-100 mb-3"
+      >
+        <mat-label>Patient Address</mat-label>
+
+        <textarea
+          matInput
+          formControlName="patientAddress"
+          placeholder="Enter patient address  "
+          rows="2"
+          required
+        >
+        </textarea>
+
+        <mat-error *ngIf="hasError.patientAddress?.touched">
+          Patient address is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-md-6">
+      <mat-form-field
+        appearance="outline"
+        floatLabel="always"
+        class="w-100 mb-3"
+      >
+        <mat-label>Other Details</mat-label>
+
+        <textarea
+          matInput
+          formControlName="otherDetails"
+          placeholder="Enter other details"
+          rows="2"
+          required
+        >
+        </textarea>
+
+        <mat-error *ngIf="hasError.otherDetails?.touched">
+          Other details are required
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="text-end">
+      <button
+        mat-flat-button
+        [disabled]="appointmentForm.invalid || !slotValidation"
+        (click)="onSubmit()"
+      >
+        Book Appointment
+      </button>
+      <button mat-stroked-button (click)="closeDialog()">Cancel</button>
+    </div>
+  </div>
+</div>

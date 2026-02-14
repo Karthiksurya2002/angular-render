@@ -1,0 +1,13 @@
+.dashboardImg img {
+  width: 98vw;
+}
+.ambulance-btm {
+  float: left;
+  width: 100%;
+  background: #fcf8f3;
+  padding: 0px;
+  margin-bottom: 20px;
+}
+.content {
+  padding: 5vh 20vh 5vh 20vh;
+}

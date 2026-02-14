@@ -1,0 +1,11 @@
+<div class="container d-flex align-items-center p-4 flex-column">
+  <h2>Cancel Appointment</h2>
+  <p>Are you sure you want to cancel this appointment {{ data?.opNumber }}?</p>
+  <button mat-stroked-button color="warn" (click)="onCancel()">
+    Yes, Cancel
+  </button>
+  <br />
+  <button mat-stroked-button color="primary" (click)="onClose()">
+    No, Keep It
+  </button>
+</div>
