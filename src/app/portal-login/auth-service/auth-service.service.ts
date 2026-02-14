@@ -5,7 +5,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class AuthServiceService {
-  url: String = 'http://localhost:8080/shmp';
+  // url: String = 'http://localhost:8080/shmp';
+  url: string = 'https://hospital-backend-pkv3.onrender.com/shmp';
   constructor(private http: HttpClient) {}
 
   getLogin(body: any) {
